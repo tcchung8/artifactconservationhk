@@ -473,17 +473,31 @@ a:hover{color:var(--color-accent-dark)}
                 </li>
             </ul>
         </div>
-        <form class="contact-form" id="contactForm" data-aos="fade-left">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="name">姓名 Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="您的姓名 Your name">
-                </div>
-                <div class="form-group">
-                    <label for="email">電郵 Email *</label>
-                    <input type="email" id="email" name="email" required placeholder="your@email.com">
-                </div>
-            </div>
+       <form action="https://formly.email/submit" method="POST">
+  <input type="hidden" name="access_key" value="34b2fdf246ca4be6b4ef51a307ec093a">
+  
+  <!-- 可選：自訂郵件主旨 -->
+  <input type="hidden" name="subject" value="網站查詢 - artifactconservationhk.org">
+  
+  <!-- 可選：提交後跳轉的感謝頁面（如果有的話）-->
+  <!-- <input type="hidden" name="redirect" value="https://artifactconservationhk.org/thanks.html"> -->
+  
+  <!-- 防垃圾郵件陷阱欄位（隱藏在畫面上）-->
+  <input type="checkbox" name="botcheck" style="display:none">
+  
+  <label>姓名 *</label><br>
+  <input type="text" name="name" required><br><br>
+  
+  <label>電郵 *</label><br>
+  <input type="email" name="email" required><br><br>
+  
+  <label>查詢內容 *</label><br>
+  <textarea name="message" required></textarea><br><br>
+  
+  <button type="submit">發送查詢</button>
+</form>
+
+        
             <div class="form-group">
                 <label for="subject">查詢類別 Subject</label>
                 <select id="subject" name="subject">
